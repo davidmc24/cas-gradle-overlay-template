@@ -1,0 +1,16 @@
+<cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+    <cas:authenticationSuccess>
+        <cas:user th:utext="${principal.id}"/>
+        <cas:proxyGrantingTicket th:if="${pgtIou}" th:utext="${pgtIou}"/>
+        <cas:proxies th:if="${not #lists.isEmpty(chainedAuthentications)}">
+            <cas:proxy th:each="proxy : ${chainedAuthentications}" th:utext="${proxy.principal.id}"/>
+        </cas:proxies>
+        <cas:attributes>
+          <cas:firstname>FirstName</cas:firstname>
+          <cas:lastname>LastName</cas:lastname>
+          <cas:email>no_reply@commercehub.com</cas:email>
+          <cas:accountId>partner_name</cas:accountId>
+          <cas:role>role_name</cas:role>
+        </cas:attributes>
+    </cas:authenticationSuccess>
+</cas:serviceResponse>
