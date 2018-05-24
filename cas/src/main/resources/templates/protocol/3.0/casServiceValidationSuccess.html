@@ -6,8 +6,8 @@
             <cas:proxy th:each="proxy : ${chainedAuthentications}" th:utext="${proxy.principal.id}"/>
         </cas:proxies>
         <cas:attributes>
-          <cas:firstname>FirstName</cas:firstname>
-          <cas:lastname>LastName</cas:lastname>
+          <cas:given_name>FirstName</cas:given_name>
+          <cas:family_name>LastName</cas:family_name>
           <cas:email>no_reply@commercehub.com</cas:email>
           <cas:accountId>partner_name</cas:accountId>
           <cas:role>role_name</cas:role>
